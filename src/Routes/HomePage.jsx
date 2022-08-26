@@ -1,5 +1,6 @@
 import { Alertbar } from "../Components/Alert";
 import Navbar from "../Components/Navbar";
+import TopSlider from "../Components/TopSlider";
 
 function HomePage(){
 
@@ -7,6 +8,7 @@ function HomePage(){
         <div>
             <Alertbar />
             <Navbar />
+            <TopSlider />
         </div>
     )
 }
