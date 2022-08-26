@@ -41,16 +41,16 @@ function Navbar(){
               alignContent={'center'}>
                 <Flex  fontSize={'12px'}>
                 <img width={'15px'} src='https://webstatic.chargebee.com/assets/web/519/images/globe2.svg' alt="Earth"/>
-                <p style={{ 'padding-left':'5px','padding-right': '5px'}}>English</p>
+                <p style={{ 'paddingLeft':'5px','paddingRight': '5px'}}>English</p>
                 </Flex>
                 <Flex  fontSize={'12px'}>
                 <img width={'15px'}
                 src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Orange_lock.svg/1200px-Orange_lock.svg.png' 
                 alt="Lock"/>
-                <Link to={'/login'}><p style={{ 'padding-left':'5px'}}>Log in</p></Link>
+                <Link to={'/login'}><p style={{ 'paddingLeft':'5px'}}>Log in</p></Link>
                
                 </Flex>
-                <Flex style={{ 'padding-left':'5px','padding-right': '5px'}} >
+                <Flex style={{ 'paddingLeft':'5px','paddingRight': '5px'}} >
                     <Button borderRadius={'1px'} alignContent={'center'} alignItems={'center'} p={'5px'} height={'30px'} color='white' bgColor='#FF6900' variant='solid'>Get a Demo &gt; </Button>
                 </Flex>
             </Flex>
