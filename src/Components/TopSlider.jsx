@@ -1,23 +1,27 @@
-import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Image, Stack, Text } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import axios from "axios"
+import LogoSlider from "./LogoSlider";
+import SliderMenu from "./SliderMenu";
 
 function TopSlider(){
     const [Data, setData] = useState([])
     
     useEffect(()=>{
-        axios.get('https://json-server-chargebee.herokuapp.com/data').then((res)=>setData(res.data.HomeSlide))
-        
+        axios.get('https://json-server-chargebee.herokuapp.com/data')
+        .then((res)=>setData(res.data))
+        .catch((err)=>console.log(err))
     },[])
-    console.log(Data)
+
+    console.log(Data.HomeSlide)
 
     return (
         <div>
             <Carousel width={'100%'}  autoPlay infiniteLoop showArrows={false} showThumbs={false}	>
-            {Data.map((slide) => {
+            {Data.HomeSlide && Data.HomeSlide.map((slide) => {
                 return( 
                 <div>
                     <Flex justifyContent={'space-between'} m='auto' p={'30px'} w={'90%'} >
@@ -46,8 +50,17 @@ function TopSlider(){
                     );
             })}
 
-    </Carousel>
-            
+            </Carousel>
+            <LogoSlider />
+
+            <Stack w="50%" m={'auto'}>
+                <Text m={'auto'} fontSize={'25px'} fontWeight={'extrabold'}>Streamline Revenue Operations</Text>
+                <Text pl={'70px'} pr={'70px'} fontSize={'12px'} lineHeight={'15px'} color={'blackAlpha.600'} textAlign={'center'} m={'auto'}>
+                    Chargebee automates the lead-to-ledger workflow across your revenue stack, so you can dream, deploy, and enjoy the breeze.
+                    While the MRR just keeps rolling.
+                </Text>
+            </Stack>
+            <SliderMenu data={Data.SliderMenu} />
         </div>
     )
 }
