@@ -1,5 +1,5 @@
 import { Alertbar } from "../Components/Alert";
-import { Footer } from "../Components/Footer";
+import { FooterMenu } from "../Components/Footer";
 
 import Navbar from "../Components/Navbar";
 import TopSlider from "../Components/TopSlider";
@@ -10,10 +10,10 @@ function HomePage(){
     return (
         <div>
             <Alertbar />
-            <Navbar />
+            <Navbar invert={0} />
             <TopSlider />
             <Trusted />
-            <Footer />
+            <FooterMenu />
         </div>
     )
 }
