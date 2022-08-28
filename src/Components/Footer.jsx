@@ -3,7 +3,7 @@ import { FaFacebook, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa'
 
 
 
-export function Footer(){
+export function FooterMenu(){
 
     return (
         <div style={{'backgroundColor':'lightgray'}}>
