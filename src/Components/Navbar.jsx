@@ -1,10 +1,20 @@
 import { Button, Flex } from "@chakra-ui/react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AppContext } from "../Context/AppContextProvider";
+import { logOut } from "../Reducer/actionCreators";
 
 
 
 
 function Navbar(){
+
+    const {state,dispatch} = useContext(AppContext)
+
+    function LogOut(){
+        dispatch(logOut())
+    }
+
     return (
         <Flex width={'90%'}
               m={'auto'}
@@ -47,7 +57,8 @@ function Navbar(){
                 <img width={'15px'}
                 src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Orange_lock.svg/1200px-Orange_lock.svg.png' 
                 alt="Lock"/>
-                <Link to={'/login'}><p style={{ 'paddingLeft':'5px'}}>Log in</p></Link>
+                {state.isAuth ? <p onClick={()=>LogOut()} style={{ 'paddingLeft':'5px','cursor':'pointer'}}>Log out</p> : <Link to={'/login'}><p style={{ 'paddingLeft':'5px'}}>Log in</p></Link> }
+                
                
                 </Flex>
                 <Flex style={{ 'paddingLeft':'5px','paddingRight': '5px'}} >
