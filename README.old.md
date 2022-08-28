@@ -1,5 +1,5 @@
 # dangerous-smash-6971
-Subscription Management service website clone of www.chargebee.com/
+Subscription Management service website
 
 - Data comes from "https://json-server-chargebee.herokuapp.com/db" Api
 - Login Post request created from "https://reqres.in/api/login".
